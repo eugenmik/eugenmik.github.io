@@ -1,0 +1,8 @@
+<aside class="pub-box">
+  <p><strong>Published in the trade press</strong></p>
+  <ul>
+    {{- range site.Data.publications }}
+    <li><a href="{{ .url }}" rel="noopener" target="_blank">{{ .title }}</a>, <em>{{ .outlet }}</em>, {{ .date }}</li>
+    {{- end }}
+  </ul>
+</aside>

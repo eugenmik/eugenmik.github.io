@@ -1,0 +1,6 @@
+<article class="project-card">
+  <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+  <p>{{ .Description }}</p>
+  {{- with .Params.metric }}<p class="metric">{{ . }}</p>{{ end }}
+  {{- with .Params.stack }}<p class="stack">{{ delimit . " · " }}</p>{{ end }}
+</article>

@@ -1,0 +1,13 @@
+{{- define "main" }}
+<header class="page-header">
+  <h1>{{ .Title }}</h1>
+  {{- with .Description }}<div class="post-description">{{ . }}</div>{{ end }}
+</header>
+{{- range site.Data.publications }}
+<article class="pub-entry">
+  <h2><a href="{{ .url }}" rel="noopener" target="_blank">{{ .title }}</a></h2>
+  <p class="pub-meta">{{ .outlet }} · {{ .date }}</p>
+  <p>{{ .abstract }}</p>
+</article>
+{{- end }}
+{{- end }}

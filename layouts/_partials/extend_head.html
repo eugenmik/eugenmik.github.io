@@ -1,0 +1,22 @@
+{{- if .Params.math }}
+<link rel="stylesheet" href="{{ "vendor/katex/katex.min.css" | relURL }}">
+<script defer src="{{ "vendor/katex/katex.min.js" | relURL }}"></script>
+<script defer src="{{ "vendor/katex/contrib/auto-render.min.js" | relURL }}"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'\\[',right:'\\]',display:true},{left:'\\(',right:'\\)',display:false}]});"></script>
+{{- end }}
+{{- if .IsHome }}
+<script type="application/ld+json">
+{{ dict
+  "@context" "https://schema.org"
+  "@type" "Person"
+  "name" site.Title
+  "jobTitle" site.Params.headline
+  "url" site.BaseURL
+  "image" (site.Params.heroPhoto | absURL)
+  "email" (printf "mailto:%s" site.Params.email)
+  "address" (dict "@type" "PostalAddress" "addressLocality" "Senftenberg" "addressCountry" "DE")
+  "sameAs" (slice "https://github.com/eugenmik" "https://linkedin.com/in/eugenmiknevic")
+  "knowsAbout" (slice "Casting simulation" "Solidification" "Foundry engineering" "Graph neural networks" "Physics-based machine learning")
+  | jsonify | safeJS }}
+</script>
+{{- end }}

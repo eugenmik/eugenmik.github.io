@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 380" font-family="Inter, Roboto, Helvetica, Arial, sans-serif" role="img" aria-labelledby="t">
+  <title id="t">AlloyForge: a composition goes through PHACOMP, CALPHAD and a literature search, and the results are combined into a shortlist with costs</title>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1F4E79"/>
+    </marker>
+  </defs>
+  <rect width="960" height="380" fill="#ffffff"/>
+  <g fill="#ffffff" stroke="#1F4E79" stroke-width="2">
+    <rect x="24" y="150" width="170" height="80" rx="10"/>
+    <rect x="300" y="30" width="250" height="90" rx="10"/>
+    <rect x="300" y="145" width="250" height="90" rx="10"/>
+    <rect x="300" y="260" width="250" height="90" rx="10"/>
+    <rect x="660" y="135" width="276" height="110" rx="10"/>
+  </g>
+  <g fill="none" stroke="#1F4E79" stroke-width="2" marker-end="url(#a)">
+    <path d="M194,190 C245,190 245,75 296,75"/>
+    <path d="M194,190 L296,190"/>
+    <path d="M194,190 C245,190 245,305 296,305"/>
+    <path d="M550,75 C605,75 605,170 656,170"/>
+    <path d="M550,190 L656,190"/>
+    <path d="M550,305 C605,305 605,210 656,210"/>
+  </g>
+  <g fill="#222222" font-size="17" font-weight="600" text-anchor="middle">
+    <text x="109" y="186">Alloy</text>
+    <text x="109" y="208">composition</text>
+    <text x="425" y="66">PHACOMP screening</text>
+    <text x="425" y="181">CALPHAD check</text>
+    <text x="425" y="296">Literature search (RAG)</text>
+    <text x="798" y="178">Shortlist with</text>
+    <text x="798" y="200">trade-offs and cost</text>
+  </g>
+  <g fill="#5A5A5A" font-size="14" text-anchor="middle">
+    <text x="425" y="92">Md, Bo, Nv · TCP phase risk</text>
+    <text x="425" y="207">pycalphad · open TDB database</text>
+    <text x="425" y="322">metallurgy texts · pgvector · bge-m3</text>
+    <text x="798" y="226">40 reference alloys · LLM summary</text>
+  </g>
+</svg>

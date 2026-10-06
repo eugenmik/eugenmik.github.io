@@ -1,0 +1,3 @@
+{{- with site.GetPage (printf "/posts/%s" (.Get 0)) }}
+<p class="related-post">Read more: <a href="{{ .RelPermalink }}">{{ .Title }}</a></p>
+{{- end }}

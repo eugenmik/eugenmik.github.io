@@ -1,0 +1,9 @@
+<figure class="home-video">
+  {{- range slice "light" "dark" }}
+  <video class="video-{{ . }}" data-scheme="{{ . }}" autoplay muted loop playsinline preload="auto"
+    poster="{{ printf "media/solidification-%s-poster.jpg" . | relURL }}"
+    aria-label="Animation: solidification time sweep of a casting in FoundryFlash">
+    <source src="{{ printf "media/solidification-%s.mp4" . | relURL }}" type="video/mp4">
+  </video>
+  {{- end }}
+</figure>

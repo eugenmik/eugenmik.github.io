@@ -1,0 +1,9 @@
+{{- with where site.RegularPages "Section" "projects" }}
+<section class="home-section">
+  <h2>My projects</h2>
+  <div class="project-grid">
+    {{- range .ByWeight }}{{ partial "project_card.html" . }}{{ end }}
+  </div>
+  <p class="more"><a href="{{ "projects/" | relURL }}">All projects</a></p>
+</section>
+{{- end }}

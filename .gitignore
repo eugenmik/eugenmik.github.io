@@ -1,0 +1,17 @@
+public/
+resources/_gen/
+.bin/
+.hugo_build.lock
+__pycache__/
+.pytest_cache/
+screenshots/
+.superpowers/
+docs/superpowers/
+# Draft posts stay local until the owner approves them (then remove the line and set draft: false)
+content/posts/validating-gpu-solidification-solver.md
+content/posts/voxels-or-tetrahedra.md
+content/posts/human-in-the-loop-ai-foundry-floor.md
+# Owner source media (originals, large GIFs); web versions live in static/media and page bundles
+files/
+# Owner's local notes
+ARTICLES_HOWTO.md

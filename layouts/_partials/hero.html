@@ -1,0 +1,14 @@
+<section class="hero">
+  {{- with site.Params.heroPhoto }}
+  <img class="hero-photo" src="{{ . | relURL }}" alt="Portrait of {{ site.Title }}" width="200" height="250">
+  {{- end }}
+  <div class="hero-text">
+    <h1>{{ site.Title }}</h1>
+    <p class="hero-headline">{{ site.Params.headline }}</p>
+    <p class="hero-subline">{{ site.Params.subline }}</p>
+    <div class="hero-buttons">
+      <a class="button primary" href="{{ "cv/Miknevic_Eugen_CV_EN.pdf" | relURL }}">CV (EN, PDF)</a>
+    </div>
+    {{ partial "social_icons.html" (dict "align" "left") }}
+  </div>
+</section>

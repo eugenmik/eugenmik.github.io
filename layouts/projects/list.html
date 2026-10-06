@@ -1,0 +1,9 @@
+{{- define "main" }}
+<header class="page-header">
+  <h1>{{ .Title }}</h1>
+  {{- with .Description }}<div class="post-description">{{ . }}</div>{{ end }}
+</header>
+<div class="project-grid">
+  {{- range .Pages.ByWeight }}{{ partial "project_card.html" . }}{{ end }}
+</div>
+{{- end }}

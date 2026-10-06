@@ -1,0 +1,10 @@
+{{- with site.Data.publications }}
+<section class="home-section published-in">
+  <h2>As published in</h2>
+  <ul>
+    {{- range . }}
+    <li><a href="{{ .url }}" rel="noopener" target="_blank"><strong>{{ .outlet }}</strong>: {{ .title }}</a> <span class="date">{{ .date }}</span></li>
+    {{- end }}
+  </ul>
+</section>
+{{- end }}
