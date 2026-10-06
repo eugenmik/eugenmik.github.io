@@ -7,10 +7,7 @@ __pycache__/
 screenshots/
 .superpowers/
 docs/superpowers/
-# Draft posts stay local until the owner approves them (then remove the line and set draft: false)
-content/posts/validating-gpu-solidification-solver.md
-content/posts/voxels-or-tetrahedra.md
-content/posts/human-in-the-loop-ai-foundry-floor.md
+# Draft posts stay local until approved: add their paths here, remove when publishing
 # Owner source media (originals, large GIFs); web versions live in static/media and page bundles
 files/
 # Owner's local notes

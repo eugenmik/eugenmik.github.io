@@ -1,6 +1,6 @@
 import json
 
-from conftest import requires_drafts, soup, text
+from conftest import POSTS_PUBLISHED, ROOT, requires_drafts, soup, text
 
 POSTS = ["validating-gpu-solidification-solver", "voxels-or-tetrahedra", "human-in-the-loop-ai-foundry-floor"]
 
@@ -42,10 +42,13 @@ def test_footer_links(prod):
     assert any(h.rstrip("/").endswith("/search") for h in hrefs)
 
 
-def test_drafts_absent_from_prod(prod):
+def test_only_published_posts_reach_prod(prod):
     dest, _ = prod
-    for slug in POSTS:
-        assert not (dest / "posts" / slug).exists(), slug
+    for path in (ROOT / "content" / "posts").glob("*.md"):
+        if path.name == "_index.md":
+            continue
+        is_draft = "draft: true" in path.read_text(encoding="utf-8")
+        assert (dest / "posts" / path.stem).exists() != is_draft, path.name
 
 
 @requires_drafts
@@ -74,10 +77,11 @@ def test_home_jsonld_person(prod):
 
 
 @requires_drafts
-def test_related_post_links_only_when_published(prod, drafts):
+def test_related_post_links_follow_publication(prod, drafts):
     prod_dest, _ = prod
     drafts_dest, _ = drafts
-    assert not soup(prod_dest, "projects/foundryflash/index.html").select(".related-post")
+    in_prod = soup(prod_dest, "projects/foundryflash/index.html").select(".related-post a")
+    assert bool(in_prod) == POSTS_PUBLISHED
     links = soup(drafts_dest, "projects/foundryflash/index.html").select(".related-post a")
     assert links and links[0]["href"].rstrip("/").endswith("validating-gpu-solidification-solver")
 

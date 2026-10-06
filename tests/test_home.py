@@ -1,4 +1,4 @@
-from conftest import ROOT, run_hugo, soup
+from conftest import POSTS_PUBLISHED, ROOT, run_hugo, soup
 
 
 def test_hero_content(prod):
@@ -30,11 +30,15 @@ def test_published_in_strip(prod):
     assert any("foundry-planet.com" in h for h in links)
 
 
-def test_home_hides_writing_when_no_posts(prod):
+def test_home_latest_writing_follows_published_posts(prod):
     dest, _ = prod
     page = soup(dest, "index.html")
-    assert "Latest writing" not in page.get_text()
-    assert not page.select(".post-list")
+    if POSTS_PUBLISHED:
+        assert "Latest writing" in page.get_text()
+        assert page.select(".post-list li")
+    else:
+        assert "Latest writing" not in page.get_text()
+        assert not page.select(".post-list")
 
 
 def test_hero_without_photo(tmp_path):

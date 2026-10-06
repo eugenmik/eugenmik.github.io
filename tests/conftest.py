@@ -7,10 +7,11 @@ from bs4 import BeautifulSoup
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 HUGO = ROOT / "scripts" / "hugo.sh"
 
-# Draft posts live only on the owner's disk (git-ignored until approved), so CI has none.
-HAS_DRAFTS = any("draft: true" in p.read_text(encoding="utf-8")
-                 for p in (ROOT / "content" / "posts").glob("*.md") if p.name != "_index.md")
-requires_drafts = pytest.mark.skipif(not HAS_DRAFTS, reason="draft posts are kept locally, not in git")
+# Tests about article content need the article files; drafts may exist only on the owner's disk.
+HAS_POSTS = any(p.name != "_index.md" for p in (ROOT / "content" / "posts").glob("*.md"))
+requires_drafts = pytest.mark.skipif(not HAS_POSTS, reason="article files are not present in this checkout")
+POSTS_PUBLISHED = any("draft: false" in p.read_text(encoding="utf-8")
+                      for p in (ROOT / "content" / "posts").glob("*.md") if p.name != "_index.md")
 
 
 def run_hugo(dest, *extra):

@@ -3,7 +3,7 @@ import hashlib
 import re
 import subprocess
 
-from conftest import ROOT, requires_drafts, soup, text
+from conftest import POSTS_PUBLISHED, ROOT, requires_drafts, soup, text
 
 # sha256(lower-case name)[:16] of names that must never appear, so the list itself stays private.
 DENY_HASHES = {
@@ -85,10 +85,7 @@ def test_legal_discloses_us_processing(prod):
     assert "United States" in text(dest, "legal/index.html")
 
 
-@requires_drafts
-def test_empty_writing_page_points_to_publications(prod, drafts):
-    prod_dest, _ = prod
-    drafts_dest, _ = drafts
-    links = [a["href"] for a in soup(prod_dest, "posts/index.html").select(".post-content a")]
-    assert any(h.rstrip("/").endswith("/publications") for h in links)
-    assert "First articles are in review" not in text(drafts_dest, "posts/index.html")
+def test_writing_page_note_only_without_published_posts(prod):
+    dest, _ = prod
+    note = "First articles are in review" in text(dest, "posts/index.html")
+    assert note != POSTS_PUBLISHED
