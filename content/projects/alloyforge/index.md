@@ -1,6 +1,7 @@
 ---
 title: "AlloyForge: superalloy design assistant"
 description: "A tool for screening heat-resistant nickel, cobalt and iron superalloys, with a search over metallurgy literature."
+featured: true
 weight: 40
 metric: "PHACOMP, CALPHAD and a literature search in one tool"
 stack: ["FastAPI", "NiceGUI", "PostgreSQL / pgvector", "pycalphad"]

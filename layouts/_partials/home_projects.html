@@ -1,4 +1,5 @@
-{{- with where site.RegularPages "Section" "projects" }}
+{{- /* Only projects marked featured: true; all projects are on /projects/ */}}
+{{- with where (where site.RegularPages "Section" "projects") "Params.featured" true }}
 <section class="home-section">
   <h2>My projects</h2>
   <div class="project-grid">

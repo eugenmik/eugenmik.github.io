@@ -1,6 +1,7 @@
 ---
 title: "FoundryFlash: GPU casting simulator"
 description: "A casting solidification simulator that runs in the browser, from STEP upload to a feeding decision, with a Julia and CUDA solver behind it."
+featured: true
 weight: 10
 metric: "1.6M elements in 9.9 s on a GPU, within 3.7% of a commercial reference"
 stack: ["Julia", "CUDA.jl", "Gmsh", "FastAPI", "React", "three.js"]

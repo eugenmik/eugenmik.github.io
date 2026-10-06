@@ -1,6 +1,7 @@
 ---
 title: "GNN surrogate for casting solidification"
 description: "A graph neural network that predicts solidification-time fields and hot spots from a STEP file in seconds."
+featured: true
 weight: 20
 metric: "Trained on 14,437 FEM simulations, hot-spot overlap 0.917"
 stack: ["PyTorch Geometric", "FEniCSx", "CadQuery", "Gmsh"]

@@ -1,6 +1,7 @@
 ---
 title: "GussCore: AI-assisted foundry ERP/MES"
 description: "Production management for iron and steel foundries. Workers report by voice or photo, and a person confirms every AI proposal."
+featured: true
 weight: 30
 metric: "Piloted at a two-plant foundry group"
 stack: ["FastAPI", "SvelteKit", "PostgreSQL", "Ollama", "Whisper"]

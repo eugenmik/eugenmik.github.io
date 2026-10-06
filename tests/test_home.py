@@ -20,7 +20,7 @@ def test_cv_buttons(prod):
 
 def test_home_project_cards(prod):
     dest, _ = prod
-    assert len(soup(dest, "index.html").select(".home-section .project-card")) == 5
+    assert len(soup(dest, "index.html").select(".home-section .project-card")) == 4
 
 
 def test_published_in_strip(prod):

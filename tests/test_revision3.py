@@ -57,3 +57,10 @@ def test_russian_howto_stays_local():
     tracked = subprocess.run(["git", "ls-files"], cwd=ROOT, capture_output=True, text=True).stdout.split()
     assert "ARTICLES_HOWTO.md" not in tracked
     assert "ARTICLES_HOWTO" not in (ROOT / "README.md").read_text(encoding="utf-8")
+
+
+def test_home_shows_only_featured_projects(prod):
+    dest, _ = prod
+    home = [a["href"].strip("/").split("/")[-1] for a in soup(dest, "index.html").select(".home-section .project-card h3 a")]
+    assert home == ["foundryflash", "gnn-solidification", "gusscore", "alloyforge"]
+    assert len(soup(dest, "projects/index.html").select(".project-card")) == 5
