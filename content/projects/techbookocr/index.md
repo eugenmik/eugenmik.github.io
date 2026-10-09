@@ -12,7 +12,7 @@ I have a very large library of old scanned books on metallurgy and foundry pract
 
 ## What it does
 
-techbookocr reads a DjVu or PDF file in Russian, English or German and writes a Markdown book. Tables become HTML with their merged header cells, formulas become LaTeX, and figures are cropped into separate files, including the small drawings that old handbooks put inside table cells. Every page starts with an anchor that points back to the scan, and a quality report lists each correction the pipeline made and each word the spell checker did not know. Every book gets front matter and a table-of-contents note for Obsidian.
+techbookocr reads a DjVu or PDF file in Russian, English or German and writes a Markdown book. Tables become HTML with their merged header cells, formulas become LaTeX, and figures are cropped into separate files, including the small drawings that old handbooks put inside table cells. Every page starts with an anchor that points back to the scan, and a quality report lists each correction the pipeline made and each word the spell checker did not know. Each finished book also carries front matter and a table-of-contents note for Obsidian.
 
 {{< figure src="nbs-page.jpg" width="460" alt="Scanned page 17 of a 1955 U.S. National Bureau of Standards research paper with equations, a table with a two-level header and a plot" caption="A test page from a 1955 U.S. National Bureau of Standards paper (public domain). techbookocr read all 48 numbers in its table correctly and 13 of the 14 equations exactly." >}}
 

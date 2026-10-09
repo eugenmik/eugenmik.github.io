@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 300" font-family="Inter, Roboto, Helvetica, Arial, sans-serif" role="img" aria-labelledby="t">
+  <title id="t">A resume is parsed into an analysis, which generates interview questions; a mock interview follows, and a language model scores each answer</title>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1F4E79"/>
+    </marker>
+  </defs>
+  <rect width="960" height="300" fill="#ffffff"/>
+  <g fill="#ffffff" stroke="#1F4E79" stroke-width="2">
+    <rect x="20" y="150" width="160" height="86" rx="10"/>
+    <rect x="222" y="150" width="176" height="86" rx="10"/>
+    <rect x="440" y="150" width="176" height="86" rx="10"/>
+    <rect x="658" y="150" width="182" height="86" rx="10"/>
+    <rect x="658" y="24" width="182" height="86" rx="10"/>
+  </g>
+  <g fill="none" stroke="#1F4E79" stroke-width="2" marker-end="url(#a)">
+    <path d="M180,193 L218,193"/>
+    <path d="M398,193 L436,193"/>
+    <path d="M616,193 L654,193"/>
+    <path d="M749,146 L749,116"/>
+  </g>
+  <g fill="#222222" font-size="17" font-weight="600" text-anchor="middle">
+    <text x="100" y="186">Resume</text>
+    <text x="310" y="180">Analysis</text>
+    <text x="528" y="180">Questions</text>
+    <text x="749" y="180">Mock interview</text>
+    <text x="749" y="54">Judge model</text>
+  </g>
+  <g fill="#5A5A5A" font-size="14" text-anchor="middle">
+    <text x="100" y="208">PDF, DOCX</text>
+    <text x="100" y="226">or text</text>
+    <text x="310" y="202">seniority, skills,</text>
+    <text x="310" y="222">gaps</text>
+    <text x="528" y="202">technical, metallurgy,</text>
+    <text x="528" y="222">quality, behavioural</text>
+    <text x="749" y="202">live chat, three</text>
+    <text x="749" y="222">interviewer personas</text>
+    <text x="749" y="78">scores 0 to 10,</text>
+    <text x="749" y="96">suggests a model answer</text>
+  </g>
+</svg>

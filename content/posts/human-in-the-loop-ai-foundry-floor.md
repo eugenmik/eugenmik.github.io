@@ -20,7 +20,7 @@ The language model must answer in a fixed JSON schema: intent, quantity, stage, 
 
 ## 3. Keep the data in the plant
 
-Speech, photos of lab chemistry protocols and production numbers are sensitive. Speech recognition (Whisper) and the language and vision models (Qwen, served by Ollama) run on the plant's own GPU. Planning GPU memory for this was one of the first architecture decisions I recorded.
+Voice recordings, photos of lab chemistry protocols and production numbers are all sensitive. Speech recognition (Whisper) and the language and vision models (Qwen, served by Ollama) run on the plant's own GPU. Planning GPU memory for this was one of the first architecture decisions I recorded.
 
 ## 4. Learn from confirmations
 

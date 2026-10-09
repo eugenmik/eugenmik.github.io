@@ -1,6 +1,6 @@
 from conftest import soup, text
 
-SLUGS = ["foundryflash", "castsolid-gnn", "gusscore", "techbookocr", "alloyforge"]
+SLUGS = ["foundryflash", "castsolid-gnn", "gusscore", "techbookocr", "alloyforge", "foundry-interview-prep"]
 
 
 def test_projects_index_lists_four_cards_in_order(prod):
@@ -17,6 +17,7 @@ def test_project_pages_exist_with_key_numbers(prod):
         "gusscore": ["two-plant foundry group", "confirm"],
         "alloyforge": ["PHACOMP", "CALPHAD"],
         "techbookocr": ["Obsidian", "0.997", "12 GB", "library"],
+        "foundry-interview-prep": ["Streamlit", "Turing College", "no test suite"],
     }
     for slug, needles in expected.items():
         body = text(dest, f"projects/{slug}/index.html")
@@ -28,7 +29,8 @@ def test_github_links(prod):
     dest, _ = prod
     for slug, repo in [("castsolid-gnn", "castsolid-gnn"),
                        ("gusscore", "gusscore-erp"), ("alloyforge", "alloyforge"),
-                       ("techbookocr", "techbookocr")]:
+                       ("techbookocr", "techbookocr"),
+                       ("foundry-interview-prep", "foundry-interview-prep")]:
         hrefs = [a["href"] for a in soup(dest, f"projects/{slug}/index.html").select("a[href]")]
         assert f"https://github.com/eugenmik/{repo}" in hrefs, slug
 

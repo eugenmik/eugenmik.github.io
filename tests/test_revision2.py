@@ -3,7 +3,7 @@ import re
 
 from conftest import soup, text
 
-SLUGS = ["foundryflash", "castsolid-gnn", "gusscore", "techbookocr", "alloyforge"]
+SLUGS = ["foundryflash", "castsolid-gnn", "gusscore", "techbookocr", "alloyforge", "foundry-interview-prep"]
 PROSE = ".post-content, .hero, .home-section, .home-video, .page-header, .pub-entry, .project-card, .post-description, .pub-box"
 
 

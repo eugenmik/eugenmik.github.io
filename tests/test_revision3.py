@@ -63,4 +63,20 @@ def test_home_shows_only_featured_projects(prod):
     dest, _ = prod
     home = [a["href"].strip("/").split("/")[-1] for a in soup(dest, "index.html").select(".home-section .project-card h3 a")]
     assert home == ["foundryflash", "castsolid-gnn", "gusscore", "alloyforge"]
-    assert len(soup(dest, "projects/index.html").select(".project-card")) == 5
+    assert len(soup(dest, "projects/index.html").select(".project-card")) == 6
+
+
+def test_course_project_is_last_and_not_on_home(prod):
+    dest, _ = prod
+    order = [a["href"].strip("/").split("/")[-1]
+             for a in soup(dest, "projects/index.html").select(".project-card h3 a")]
+    assert order[-1] == "foundry-interview-prep"
+    home = [a["href"] for a in soup(dest, "index.html").select(".home-section .project-card a")]
+    assert not any("foundry-interview-prep" in h for h in home)
+
+
+def test_course_project_states_its_scope(prod):
+    dest, _ = prod
+    body = text(dest, "projects/foundry-interview-prep/index.html")
+    assert "Turing College" in body
+    assert "no test suite" in body and "no licence file" in body
