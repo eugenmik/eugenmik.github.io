@@ -1,5 +1,8 @@
 """The castsolid-gnn release: public weights on Hugging Face, renamed repo (2026-10-09)."""
 import re
+import subprocess
+
+import pytest
 
 from conftest import ROOT, soup, text
 
@@ -69,9 +72,25 @@ def test_release_post_exists_and_links_the_model(prod):
     assert "safetensors" in body and "Apache-2.0" in body
 
 
-def test_cvs_point_to_the_new_repo_and_model():
+def _pdf_text(path):
+    return subprocess.run(["pdftotext", str(path), "-"], capture_output=True, text=True, check=True).stdout
+
+
+def test_published_cvs_point_to_the_new_repo_and_model():
+    """The PDFs the site serves are the artifact visitors download."""
+    for name in ("Miknevic_Eugen_CV_EN.pdf", "Miknevic_Eugen_Lebenslauf_DE.pdf"):
+        body = _pdf_text(ROOT / "static" / "cv" / name)
+        assert "castsolid-gnn" in body, name
+        assert "0,932" not in body and "0.932" not in body, name
+
+
+CV_SRC = ROOT.parent / "CV_2026" / "2026-10_master"
+
+
+@pytest.mark.skipif(not CV_SRC.is_dir(), reason="CV LaTeX sources live on the owner's machine only")
+def test_cv_sources_point_to_the_new_repo_and_model():
     for name in ("Miknevic_Eugen_CV_2026-10.tex", "Miknevic_Eugen_Lebenslauf_2026-10.tex"):
-        tex = (ROOT.parent / "CV_2026" / "2026-10_master" / name).read_text(encoding="utf-8")
+        tex = (CV_SRC / name).read_text(encoding="utf-8")
         assert "casting-gnn-solidification" not in tex, name
         assert "huggingface.co/eugenmik/castsolid-gnn" in tex, name
         assert "0,932" not in tex and "0.932" not in tex, name
