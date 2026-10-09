@@ -1,6 +1,6 @@
 from conftest import soup, text
 
-SLUGS = ["foundryflash", "gnn-solidification", "gusscore", "techbookocr", "alloyforge"]
+SLUGS = ["foundryflash", "castsolid-gnn", "gusscore", "techbookocr", "alloyforge"]
 
 
 def test_projects_index_lists_four_cards_in_order(prod):
@@ -13,7 +13,7 @@ def test_project_pages_exist_with_key_numbers(prod):
     dest, _ = prod
     expected = {
         "foundryflash": ["9.9 s", "44.9 s", "3.7%", "7,500"],
-        "gnn-solidification": ["14,437", "0.917", "0.932", "0.738"],
+        "castsolid-gnn": ["14,937", "0.917", "0.738"],
         "gusscore": ["two-plant foundry group", "confirm"],
         "alloyforge": ["PHACOMP", "CALPHAD"],
         "techbookocr": ["Obsidian", "0.997", "12 GB", "library"],
@@ -26,7 +26,7 @@ def test_project_pages_exist_with_key_numbers(prod):
 
 def test_github_links(prod):
     dest, _ = prod
-    for slug, repo in [("gnn-solidification", "casting-gnn-solidification"),
+    for slug, repo in [("castsolid-gnn", "castsolid-gnn"),
                        ("gusscore", "gusscore-erp"), ("alloyforge", "alloyforge"),
                        ("techbookocr", "techbookocr")]:
         hrefs = [a["href"] for a in soup(dest, f"projects/{slug}/index.html").select("a[href]")]

@@ -62,11 +62,11 @@ def test_voxel_post_does_not_name_the_part(drafts):
 
 
 def test_gnn_page_caveats(prod):
+    """Superseded by test_castsolid_release for the numbers; this keeps the claim ceiling."""
     dest, _ = prod
-    body = text(dest, "projects/gnn-solidification/index.html")
+    body = text(dest, "projects/castsolid-gnn/index.html")
     assert "up to about 10,000" not in body
-    assert "(n = 2)" in body
-    assert "not a physical validation" in body
+    assert "shrinkage-risk indicator, not a porosity label" in body
 
 
 def test_foundryflash_card_and_page_wording(prod):

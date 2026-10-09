@@ -62,5 +62,5 @@ def test_russian_howto_stays_local():
 def test_home_shows_only_featured_projects(prod):
     dest, _ = prod
     home = [a["href"].strip("/").split("/")[-1] for a in soup(dest, "index.html").select(".home-section .project-card h3 a")]
-    assert home == ["foundryflash", "gnn-solidification", "gusscore", "alloyforge"]
+    assert home == ["foundryflash", "castsolid-gnn", "gusscore", "alloyforge"]
     assert len(soup(dest, "projects/index.html").select(".project-card")) == 5

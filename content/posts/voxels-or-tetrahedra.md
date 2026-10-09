@@ -32,7 +32,7 @@ Voxels do have strengths. The voxel path meshed three castings with defective CA
 
 ## Why the mesh matters for AI
 
-A graph neural network learns on nodes and edges, and an unstructured tetrahedral mesh already has that form: its nodes carry temperatures and solidification times, and its edges carry the geometry. My [GNN surrogate](/projects/gnn-solidification/) learns directly on the simulation mesh, following the MeshGraphNets pattern.
+A graph neural network learns on nodes and edges, and an unstructured tetrahedral mesh already has that form: its nodes carry temperatures and solidification times, and its edges carry the geometry. My [GNN surrogate](/projects/castsolid-gnn/) learns directly on the simulation mesh, following the MeshGraphNets pattern.
 
 A voxel grid leads to 3D convolutions instead. Their memory grows with the cube of the resolution, and the network has to learn the staircase along with the physics. For AI that proposes gating and feeding on free-form castings, the choice of discretisation decides what the model can learn.
 

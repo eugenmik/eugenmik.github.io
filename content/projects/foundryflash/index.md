@@ -13,7 +13,7 @@ Feeding decisions depend on where and when the metal freezes last: where risers 
 
 ## What I built
 
-FoundryFlash takes a STEP model to a solidification answer in the browser. It has two engines. The [GNN surrogate](/projects/gnn-solidification/) screens a design in seconds; that is the version described in the trade articles below. The full solver described here is for the final check.
+FoundryFlash takes a STEP model to a solidification answer in the browser. It has two engines. The [GNN surrogate](/projects/castsolid-gnn/) screens a design in seconds; that is the version described in the trade articles below. The full solver described here is for the final check.
 
 {{< figure src="solidification-time.jpg" alt="Solidification-time field on a flanged casting in the FoundryFlash viewer, coloured from 0 to 595 seconds" caption="Solidification time on a flanged casting in the FoundryFlash viewer." >}}
 
