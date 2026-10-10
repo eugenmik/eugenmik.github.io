@@ -36,6 +36,10 @@ enableRobotsTXT = true
     name = "github"
     url = "https://github.com/eugenmik"
   [[params.socialIcons]]
+    name = "huggingface"
+    title = "Hugging Face"
+    url = "https://huggingface.co/eugenmik"
+  [[params.socialIcons]]
     name = "email"
     url = "mailto:eugenmiknevic@gmail.com"
 
