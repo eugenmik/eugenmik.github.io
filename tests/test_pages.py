@@ -16,7 +16,7 @@ def test_publications_page(prod):
 def test_about_page(prod):
     dest, _ = prod
     body = text(dest, "about/index.html")
-    for needle in ["SLR-Elsterheide", "Head of Design & Metallurgy", "Turing College", "M.Sc. Foundry Engineering"]:
+    for needle in ["SLR-Elsterheide", "Head of Design & Metallurgy", "Turing College", "Igor Sikorsky Kyiv Polytechnic Institute"]:
         assert needle in body, needle
     hrefs = [a["href"] for a in soup(dest, "about/index.html").select("a[href]")]
     assert any(h.endswith("cv/Miknevic_Eugen_CV_EN.pdf") for h in hrefs)
@@ -90,3 +90,13 @@ def test_related_post_links_follow_publication(prod, drafts):
 def test_home_shows_writing_in_drafts_build(drafts):
     dest, _ = drafts
     assert len(soup(dest, "index.html").select(".post-list li")) == 3
+
+
+def test_about_states_the_degree_as_awarded(prod):
+    dest, _ = prod
+    body = text(dest, "about/index.html")
+    # The Ukrainian degree may be described, not carried as a German degree form.
+    assert "Master's degree in foundry engineering" in body
+    assert "M.Sc." not in body
+    assert "equivalent to a German engineering master's degree" in body
+    assert "Ingenieurkammer Sachsen" in body

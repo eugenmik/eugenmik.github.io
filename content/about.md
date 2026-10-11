@@ -32,6 +32,6 @@ Downloads: [CV (English, PDF)](/cv/Miknevic_Eugen_CV_EN.pdf) · [Lebenslauf (Ger
 
 ## Education and certificates
 
-- M.Sc. Foundry Engineering, National Technical University of Ukraine "Igor Sikorsky Kyiv Polytechnic Institute", 2003 to 2009. The degree was recognised by the Saxony Chamber of Engineers (Ingenieurkammer Sachsen) in 2020.
+- Master's degree in foundry engineering, National Technical University of Ukraine "Igor Sikorsky Kyiv Polytechnic Institute", 2003 to 2009. Germany's ZAB assessed it as equivalent to a German engineering master's degree, and in 2020 the Saxony Chamber of Engineers (Ingenieurkammer Sachsen) entered me in its register of engineers, which carries the right to the professional title Ingenieur.
 - AI Engineering, Turing College, 2026: 520 hours on LLM applications, retrieval-augmented generation, AI agents and a capstone project.
 - A Deep Dive into Claude Code, Profile Virtual School, 2026.
