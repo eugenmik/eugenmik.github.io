@@ -13,6 +13,9 @@ enableRobotsTXT = true
 [params]
   env = "production"
   author = "Eugen Miknevic"
+  # Shown as the heading in the header and hero. "Ing." is the professional
+  # title granted by Ingenieurkammer Sachsen in 2020 (§ 34 SächsIngG).
+  displayName = "Eugen Miknevic, Ing."
   description = "Foundry engineer with 20 years in casting who builds physics-based AI and software tools for foundries and metallurgy."
   defaultTheme = "auto"
   mainSections = ["posts"]

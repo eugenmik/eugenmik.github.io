@@ -24,3 +24,13 @@ def test_theme_toggle_keeps_its_label_and_shortcut(prod):
     # bs4 reports accesskey as a list of tokens.
     assert button.get("accesskey") in ("t", ["t"])
     assert button.select_one("svg.moon") and button.select_one("svg.sun")
+
+
+def test_name_carries_the_professional_title(prod):
+    dest, _ = prod
+    page = soup(dest, "index.html")
+    assert page.select_one("nav.header-nav .logo a").get_text(strip=True) == "Eugen Miknevic, Ing."
+    assert page.select_one(".hero h1").get_text(strip=True) == "Eugen Miknevic, Ing."
+    # The legal name stays in metadata: page titles, feeds and structured data.
+    assert page.select_one("title").get_text(strip=True) == "Eugen Miknevic"
+    assert page.select_one('meta[property="og:title"]')["content"] == "Eugen Miknevic"
