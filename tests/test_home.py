@@ -47,3 +47,17 @@ def test_hero_without_photo(tmp_path):
     hero = soup(tmp_path, "index.html").select_one(".hero")
     assert hero is not None
     assert hero.select_one("img") is None
+
+
+def test_cv_button_and_social_icons_share_one_row(prod):
+    dest, _ = prod
+    hero = soup(dest, "index.html").select_one(".hero")
+    row = hero.select_one(".hero-actions")
+    assert row is not None, "no single row holding the CV button and the icons"
+    assert row.select_one("a.button") is not None
+    icons = row.select_one(".social-icons")
+    assert icons is not None
+    assert len(hero.select(".social-icons")) == 1
+    # The icons sit to the right of the button, so they come after it in source order.
+    order = [e for e in row.find_all(["a", "div"]) if e.get("class")]
+    assert order.index(row.select_one("a.button")) < order.index(icons)

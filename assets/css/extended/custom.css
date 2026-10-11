@@ -24,7 +24,10 @@
 .hero h1 { font-size: 2.2rem; line-height: 1.15; margin-bottom: 6px; }
 .hero-headline { color: var(--accent); font-size: 1.2rem; font-weight: 600; margin-bottom: 8px; }
 .hero-subline { color: var(--secondary); margin-bottom: 16px; line-height: 1.5; }
-.hero-buttons { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 12px; }
+.hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+.hero-buttons { display: flex; flex-wrap: wrap; gap: 10px; }
+/* 14px + the row gap matches the 20px the icons keep between each other. */
+.hero-actions .social-icons a:first-of-type { padding-inline-start: 14px; }
 .button { display: inline-block; padding: 8px 16px; border: 1px solid var(--accent); border-radius: var(--radius); color: var(--accent); font-weight: 500; }
 .button.primary { background: var(--accent); color: var(--theme); }
 .button:hover { opacity: 0.85; }
